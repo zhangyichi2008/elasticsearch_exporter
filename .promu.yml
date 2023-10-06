@@ -1,0 +1,24 @@
+go:
+    # This must match .circle/config.yml.
+    version: 1.18
+repository:
+    path: github.com/prometheus-community/elasticsearch_exporter
+build:
+    binaries:
+        - name: elasticsearch_exporter
+    flags: -a -tags netgo
+    ldflags: |
+        -s
+        -X github.com/prometheus/common/version.Version={{.Version}}
+        -X github.com/prometheus/common/version.Revision=
+        -X github.com/prometheus/common/version.Branch=https://github.com/zhangyichi2008/elasticsearch_exporter.git
+        -X github.com/prometheus/common/version.BuildUser=zhangyichi
+        -X github.com/prometheus/common/version.BuildDate={{date "20060102-15:04:05"}}
+tarball:
+    files:
+        - LICENSE
+        - README.md
+        - CHANGELOG.md
+        - examples/grafana/dashboard.json
+        - examples/kubernetes/deployment.yml
+        - examples/prometheus/elasticsearch.rules
