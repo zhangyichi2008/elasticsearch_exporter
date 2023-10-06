@@ -10,21 +10,21 @@ Prometheus exporter for various metrics about Elasticsearch, written in Go.
 **[ADD] 增加对Node节点总分片个数的监控**
 - HELP elasticsearch_node_shards_total Total shards per node
 - TYPE elasticsearch_node_shards_total gauge
-- elasticsearch_node_shards_total{node="xtjcesbges01"} 243
+- elasticsearch_node_shards_total{node="xt01"} 243
 
 
 **[ADD] 增加对索引主分片大小(单位:GB)的监控**
 
 - HELP elasticsearch_indices_primary_shares_size_gbytes Current total size of stored index data in gbytes with only primary shards on all nodes
 - TYPE elasticsearch_indices_primary_shares_size_gbytes gauge
-- elasticsearch_indices_primary_shares_size_gbytes{cluster="elk4Fixo",index="tomcat-access-hr-2023.06"} 5.93
+- elasticsearch_indices_primary_shares_size_gbytes{cluster="elk",index="tomca-"} 5.93
 
 
 **[ADD] 增加对es分配内存大小(单位:GB)的监控**
 
 - HELP elasticsearch_jvm_memory_max_gbytes JVM memory max
 - TYPE elasticsearch_jvm_memory_max_gbytes gauge
-- elasticsearch_jvm_memory_max_gbytes{area="heap",cluster="elk4Fixo",host="xtjcesbges01.cesbg.foxconn",name="xtjcesbges01"} 31
+- elasticsearch_jvm_memory_max_gbytes{area="heap",cluster="elk",host="xt01",name="xt01"} 31
 
 
 **[DEL] 移除以go_开头的33个监控项,具体如下：**
